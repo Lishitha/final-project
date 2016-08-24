@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+<style>
+h1 {text-align: center;
+ font-size: 200%; 
+ font-family: verdana;
+  color: #BB8FCE;
+}
+
+table{
+	align:center;
+	 border:2px #BB8FCE solid;
+} 
+ 
+      
+</style>
