@@ -22,14 +22,13 @@ public class CartTest {
 		ProductDAO productDAO = (ProductDAO) con.getBean("productDAO");
 		UserDAO userDAO = (UserDAO) con.getBean("userDAO");
 		
-		cart.setId("CArt03");
-		cart.setPrice(250);
-		cart.setQuantity(3);
-		cart.setTotal(750);
+		//cart.setId(334);
+		cart.setPrice(850);
+		cart.setQuantity(1);
+		cart.setStatus('N');
+		cart.setTotal(850);
+		cart.setProduct(productDAO.get("PRO02"));
 		cart.setUser(userDAO.get("ASMA"));
-		cart.setProduct(productDAO.get("PR002"));
-		cart.setStatus("AVAILABLE");
-
 		cartDAO.saveOrUpdate(cart);
 
 		System.out.println("updated");

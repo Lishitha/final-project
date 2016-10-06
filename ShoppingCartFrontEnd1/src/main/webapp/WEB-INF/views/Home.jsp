@@ -88,7 +88,7 @@ function submitFn()
 										<li><a href="login" role="button"
 											style="padding-right: 0"><span
 												class="btn btn-large btn-success">Login</span></a></li>
-										<li><a href="register" " role="button"
+										<li><a href="member.obj" " role="button"
 											style="padding-right: 0"><span
 												class="btn btn-large btn-success">Register</span></a></li>
 									</c:when>
@@ -291,7 +291,7 @@ function submitFn()
 						<td style="font-family: verdana; color: #FDFDFD">${cart.quantity}</td>
 						<td style="font-family: verdana; color: #FDFDFD">${cart.price}</td>
 						<td style="font-family: verdana; color: #FDFDFD"><a
-							href="<c:url value='/deleteCart/${cart.id}'></c:url>">Delete</a></td>
+							href="<c:url value='deleteCart/${cart.id}'></c:url>">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -382,9 +382,11 @@ function submitFn()
 						<!-- <input align="center" class="btn btn-warning" type="submit"
 							value="Add To Cart"> -->
 
-						<td style="font-family: verdana; color: #FDFDFD"><a
-							href="<c:url value='addToMycart/${selectedProduct.id}' />">Add
-								to Cart</a></td>
+						<th style="font-family: verdana; color: #FDFDFD"><a
+							href="<c:url value='/addToMycart/${selectedProduct.id}' />">Add
+								to Cart</a></th>
+								
+								
 					</tr>
 
 				</table>

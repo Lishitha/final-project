@@ -14,12 +14,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<link rel="stylesheet" href="<c:url value="/resources/css/style2.css" />">
 </head>
 <body background="resources/images/footer.png">
 
 
-	<table>
+	<!-- <table>
 		<tr>
 			<td align="left"><a href="categories"
 				style="textfont-size: 200%; font-family: verdana">Manage
@@ -33,23 +33,39 @@
 
 		</tr>
 
-	</table>
+	</table> -->
+	
+	
+  <div class="services">
+  <h3 class="text-center wowload fadeInUp">Top Places</h3>
+	<ul class="row text-center list-inline  wowload bounceInUp">
+   	<li>
+            <span style="textfont-size: 500%; font-family: verdana"><i class="glyphicon glyphicon-list-alt" ></i><b><a href="categories" >Manage Categories</a></b></span>
+        </li>
+        <li>
+            <span><i class="glyphicon glyphicon-list-alt"></i><b><a href="products" style="textfont-size: 500%; font-family: verdana">Manage Suppliers</a></b></span>
+        </li>
+        <li>
+            <span><i class="glyphicon glyphicon-list-alt"></i><b><a href="suppliers" style="textfont-size: 500%; font-family: verdana">Manage Products</a></b></span>
+        </li>
+  	</ul>
+  </div>
 
-	<!--  <div id="adminHome">
+	 <!-- <div id="adminHome">
 <ul class="row text-center list-inline  wowload bounceInUp">
    		<li>
-            <span><i class="fa fa-camera-retro"></i><b><a href="manageCategories">Manage Categories</a></b></span>
+            <span style="textfont-size: 500%; font-family: verdana"><i class="fa fa-camera-retro" ></i><b><a href="categories" >Manage Categories</a></b></span>
         </li>
         <li>
-            <span><i class="fa fa-cube"></i><b><a href="manageSuppliers">Manage Suppliers</a></b></span>
+            <span><i class="fa fa-cube"></i><b><a href="products" style="textfont-size: 500%; font-family: verdana">Manage Suppliers</a></b></span>
         </li>
         <li>
-            <span><i class="fa fa-graduation-cap"></i><b><a href="manageProducts">Manage Products</a></b></span>
+            <span><i class="fa fa-graduation-cap"></i><b><a href="suppliers" style="textfont-size: 500%; font-family: verdana">Manage Products</a></b></span>
         </li>
        </ul>
 		
 
-	</div>-->
+	</div> --> 
 
 
 </body>

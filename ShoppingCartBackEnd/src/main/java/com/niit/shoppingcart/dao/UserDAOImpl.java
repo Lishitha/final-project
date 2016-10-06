@@ -27,7 +27,6 @@ public class UserDAOImpl implements UserDAO{
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	}
 	
-		
 	@Transactional
 	public void delete(String id){
 		User UserToDelete=new User();

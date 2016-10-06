@@ -48,12 +48,12 @@ public class UserController {
 	@Autowired
 	private CartDAO cartDAO;
 	
-	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public ModelAndView registerUser(@ModelAttribute User user)
+	@RequestMapping(value = "register", method = RequestMethod.GET)
+	public ModelAndView registerUser(HttpSession session)
 	{
 		log.debug("Starting of the method registerUser");
-		
-		ModelAndView mv = new ModelAndView("/Home");
+		User user = (User) session.getAttribute("user");
+		ModelAndView mv = new ModelAndView("redirect:/");
 		userDAO.saveOrUpdate(user);
 		mv.addObject("successMessage", "You are successfully register");
 		

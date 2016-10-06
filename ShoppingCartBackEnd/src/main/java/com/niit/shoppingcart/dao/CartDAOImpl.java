@@ -2,8 +2,10 @@ package com.niit.shoppingcart.dao;
 
 import java.util.List;
 
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -24,17 +26,20 @@ public class CartDAOImpl implements CartDAO {
 	@Transactional
 	public void saveOrUpdate(Cart cart)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(cart);
+		Session s=sessionFactory.openSession();
+		s.saveOrUpdate(cart);
+		s.flush();
+	
+		
 	}
 	
 	@Transactional
-	public String delete(String id)
-	{
-		Cart CartToDelete=new Cart();
-		CartToDelete.setId(id);
+	public String delete(int id) {
+		Cart cartToDelete = new Cart();
+		cartToDelete.setId(id);
 		try
 		{
-		sessionFactory.getCurrentSession().delete(CartToDelete);
+			sessionFactory.getCurrentSession().delete(cartToDelete);
 		}
 		catch(HibernateException e)
 		{
@@ -44,10 +49,11 @@ public class CartDAOImpl implements CartDAO {
 		return null;
 	}
 	
+	
 	@Transactional
 	public Cart get(String id)
 	{
-		String hql = "from Cart where userID=" + "'" + id + "'  and status = " + "'N'";
+		String hql = "from Cart where USER_ID=" + "'" + id + "'  and status = " + "'N'";
 		Query query= sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
         List<Cart> listCart = (List<Cart>) query.list();
@@ -61,7 +67,7 @@ public class CartDAOImpl implements CartDAO {
 	
 	@Transactional
 	public List<Cart> listCart(String id) {
-		String hql = "from Cart where userID=" + "'" + id + "'  and status = " + "'N'";
+		String hql = "from Cart where USER_ID=" + "'" + id + "'  and status = " + "'N'";
 		Query query= sessionFactory.getCurrentSession().createQuery(hql);
 
 		@SuppressWarnings("unchecked")
@@ -78,7 +84,9 @@ public class CartDAOImpl implements CartDAO {
 //		Long sum= (Long) query.uniqueResult();
 		return 0;
 	}
+
 	
+
 	
 	
 
