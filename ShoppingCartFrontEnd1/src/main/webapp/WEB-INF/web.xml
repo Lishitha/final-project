@@ -22,7 +22,9 @@ id="WebApp_ID" version="3.0">
  
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+		<param-value>/WEB-INF/dispatcher-servlet.xml
+		 /WEB-INF/spring-security.xml
+		</param-value>
 	</context-param>
 	
 	<servlet-mapping>
@@ -32,6 +34,20 @@ id="WebApp_ID" version="3.0">
 			to spring controller -->
 		<url-pattern>*.obj</url-pattern>
 	</servlet-mapping>
+	
+		<!-- *********************************Spring Security***************************** -->
+		
+	<!-- To integrate Spring security with a Spring MVC web application, just declares DelegatingFilterProxy as a servlet filter to intercept any incoming request -->	
+	 <filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
  
 	<listener>
 		<listener-class>

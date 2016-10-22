@@ -19,7 +19,17 @@
 		<h4 style="text-align: center; font-family: verdana; color: #FFFFFF">Enter
 			Your Credentials</h4>
 		<br>
-
+		
+		
+<!-- <c:if test="${not empty error}">
+			<div class="error">${error}</div>
+		</c:if>
+		<c:if test="${not empty msg}">
+			<div class="msg">${msg}</div>
+		</c:if>
+		
+		<form name='loginForm'
+			action="<c:url value='/j_spring_security_check' />" method='POST'> -->
 
 		<c:url var="action" value="/login_to_enter"></c:url>
 		<form:form name="myForm" action="${action}" method="post"
@@ -44,6 +54,8 @@
 				</tr>
 			</table>
 
+<!--<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />  -->
 		</form:form>
 </body>
 

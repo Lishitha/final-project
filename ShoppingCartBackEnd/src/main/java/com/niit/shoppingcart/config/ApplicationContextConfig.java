@@ -30,26 +30,21 @@ import com.niit.shoppingcart.model.User;
 @ComponentScan("com.niit.shoppingcart")
 @EnableTransactionManagement
 public class ApplicationContextConfig {
-	
 	@Bean(name="dataSource")
 	public DataSource getH2DataSource(){
 		DriverManagerDataSource dataSource= new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
 		dataSource.setUrl("jdbc:h2:tcp://localhost/~/niitdb");
-		
 		dataSource.setUsername("sa");
 		dataSource.setPassword("sa");
 		return dataSource;
 	}
-	
 	private Properties getHibernateProperties(){
 		Properties properties=new Properties();
 		properties.put("hibernate.show_sql","true");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		return properties;
-		
 	}
-	
 	@SuppressWarnings("deprecation")
 	@Autowired
 	@Bean(name="sessionFactory")
@@ -64,7 +59,6 @@ public class ApplicationContextConfig {
 		//sessionBuilder.addAnnotatedClass(UserDetails.class);
 		return sessionBuilder.buildSessionFactory();
 	}
-	
 	@Autowired
 	@Bean(name="transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory){

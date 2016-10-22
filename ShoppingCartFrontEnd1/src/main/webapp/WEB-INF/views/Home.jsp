@@ -191,9 +191,9 @@ function submitFn()
 								<li><a href="index-2.html">Home</a></li>
 								<li class="menu-item-has-children"><a href="#">Category</a>
 									<ul class="sub-menu">
-										<li><a href="services.html">Cakes</a></li>
-										<li><a href="clients.html">Cookies</a></li>
-										<li><a href="clients.html">Chocolates</a></li>
+										<li><a href="cake">Cakes</a></li>
+										<li><a href="Cookies">Cookies</a></li>
+										<li><a href="Chocolates">Chocolates</a></li>
 									</ul></li>
 								<c:choose>
 									<c:when test="${empty loggedInUser}">
@@ -215,6 +215,9 @@ function submitFn()
 		</div>
 	</div>
 	</div>
+	
+	<!-- <h1>Title : ${title}</h1>
+	<h1>Message : ${message}</h1> -->
 
 	<div data-role="header" data-position="fixed">
 		<table width="100%">

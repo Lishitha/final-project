@@ -76,18 +76,18 @@ public class CartDAOImpl implements CartDAO {
 		return list;
 	}
 
-	@Override
-	public int getTotal(String id) {
+	@Transactional
+	public long getTotal(String id) {
 		
-//		String hql=" sum(price) from Cart where userID=" + "'" + id +"'" + "and status=" + "N" + "'";
-//		Query query= sessionFactory.getCurrentSession().createQuery(hql);
-//		Long sum= (Long) query.uniqueResult();
+		String hql="select sum(price) from Cart where USER_ID=" + "'" + id + "'  and status = " + "'N'";
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		List list = query.list();
+		long total = (Long) list.get(0);
+		Long sum= (Long) query.uniqueResult();
+		if(list!=null && !list.isEmpty())
+		{
+			return total;
+		}
 		return 0;
 	}
-
-	
-
-	
-	
-
 }

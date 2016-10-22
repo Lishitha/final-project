@@ -76,7 +76,6 @@ public class UserController {
 
 		if (isValidUser == true)
 		{
-
 			user = userDAO.get(userID);
 			session.setAttribute("loggedInUser", user.getName());
 			session.setAttribute("loggedInUserId", user.getId());
